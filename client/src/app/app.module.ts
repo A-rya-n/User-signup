@@ -14,6 +14,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatButtonModule } from '@angular/material/button';
 
 import { LoginComponent } from './login/login.component';
 
@@ -35,6 +41,12 @@ import { LoginComponent } from './login/login.component';
     MatMenuModule,
     MatGridListModule,
     MatCardModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,29 @@
+# Directories
+node_modules/
+dist/
+build/
+coverage/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor-specific files
+*.log
+*.log.*
+*.swp
+.vscode/
+
+# Environment-specific files
+.env
+.env.local
+.env.*.local
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+npm-debug.log*
+
+# Production build files
+*.min.js
+*.min.css

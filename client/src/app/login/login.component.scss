@@ -1,0 +1,15 @@
+.form-card {
+  width: 400px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.form-button {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}

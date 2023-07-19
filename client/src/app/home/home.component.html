@@ -1,1 +1,43 @@
-<p>home works!</p>
+<mat-grid-list cols="1" rowHeight="6:1">
+  <mat-grid-tile>
+    <mat-card class="welcome-card">
+      <mat-card-header class="welcome-header">
+        <mat-card-title class="welcome">Welcome </mat-card-title>
+        <mat-card-subtitle>This is a user sign-up app.</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="2" rowHeight="6:2">
+  <mat-grid-tile>
+    <mat-card class="user-card">
+      <mat-card-header>
+        <mat-card-title class="welcome">Are you a new user?</mat-card-title>
+        <mat-card-subtitle
+          >Please click the registration button.</mat-card-subtitle
+        >
+      </mat-card-header>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" routerLink="/registration">
+          Register
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="user-card">
+      <mat-card-header>
+        <mat-card-title class="welcome"
+          >Do you already have an account?</mat-card-title
+        >
+        <mat-card-subtitle>Please log-in</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" routerLink="/login">
+          Log in
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

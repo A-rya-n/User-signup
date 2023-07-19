@@ -1,0 +1,14 @@
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-content {
+    display: flex;
+    align-items: center;
+    
+    mat-icon {
+        margin-right: 10px;
+        cursor: pointer;
+    }
+}

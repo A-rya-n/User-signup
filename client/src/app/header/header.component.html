@@ -1,1 +1,15 @@
-<p>header works!</p>
+<mat-toolbar color="primary" class="toolbar">
+  <div class="left-content">
+    <mat-icon routerLink="/home">home</mat-icon>
+    <span>Logo</span>
+  </div>
+  <div class="right-content">
+    <button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/registration">Register</button>
+      <button mat-menu-item routerLink="/login">Log in</button>
+    </mat-menu>
+  </div>
+</mat-toolbar>

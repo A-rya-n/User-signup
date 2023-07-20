@@ -5,23 +5,27 @@
         <mat-card-title>Registration</mat-card-title>
         <mat-card-subtitle>Complete all the fields</mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content class="register-form">
+      <mat-card-content class="register-form" [formGroup]="registrationForm">
         <mat-form-field>
           <mat-label>Name</mat-label>
-          <input matInput />
+          <input matInput formControlName="name" />
         </mat-form-field>
         <mat-form-field>
           <mat-label>Email</mat-label>
-          <input matInput />
+          <input matInput formControlName="email" />
         </mat-form-field>
         <label>User type: </label>
-        <mat-radio-group>
-          <mat-radio-button value="auto">Admin</mat-radio-button>
-          <mat-radio-button value="always">Developer</mat-radio-button>
+        <mat-radio-group formControlName="user">
+          <mat-radio-button value="admin">Admin</mat-radio-button>
+          <mat-radio-button value="dev">Developer</mat-radio-button>
         </mat-radio-group>
         <mat-form-field>
           <mat-label>Enter your password</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'" />
+          <input
+            matInput
+            formControlName="password"
+            [type]="hide ? 'password' : 'text'"
+          />
           <button
             mat-icon-button
             matSuffix
@@ -32,11 +36,20 @@
             <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
           </button>
         </mat-form-field>
+
+        <div class="form-button">
+          <button mat-raised-button color="warn" type="button">Cancel</button>
+          <button
+            mat-raised-button
+            color="accent"
+            type="submit"
+            [disabled]="!registrationForm.valid"
+            (click)="onSubmit()"
+          >
+            Submit
+          </button>
+        </div>
       </mat-card-content>
-      <div class="form-button">
-        <button mat-raised-button color="warn" type="button">Cancel</button>
-        <button mat-raised-button color="accent" type="submit">Submit</button>
-      </div>
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>

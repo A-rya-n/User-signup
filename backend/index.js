@@ -15,9 +15,9 @@ app.use(parser.json());
 const connectDB = async () => {
   try {
     const connect = await mongoose.connect(process.env.DB_CONNECTION);
-    console.log("Database connected!");
+    console.log("Database connected! Name:",connect.connection.name);
   } catch (err) {
-    console.log(err);
+    console.log("Database error: ",err);
   }
 };
 

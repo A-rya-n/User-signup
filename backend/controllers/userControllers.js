@@ -27,4 +27,8 @@ const registerUser = async (req, res) => {
   }
 };
 
-module.exports = { registerUser };
+const loginUser = async (req, res) => {
+  res.json({message: "User login working"})
+}
+
+module.exports = { registerUser, loginUser };

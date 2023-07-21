@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegistrationService } from '../shared/registration.service';
 import { Register } from '../shared/register.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-registration',
@@ -17,7 +18,8 @@ export class RegistrationComponent implements OnInit {
     private formBuilder: FormBuilder,
     private registerService: RegistrationService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private snack: MatSnackBar
   ) {
     this.registrationForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -40,6 +42,9 @@ export class RegistrationComponent implements OnInit {
         (response) => {
           console.log('Backend response: ', response);
           this.onCancel();
+          this.snack.open('Registration successful', undefined, {
+            duration: 2000,
+          });
         },
         (error) => {
           console.error('Error sending data: ', error);

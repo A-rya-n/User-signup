@@ -14,4 +14,9 @@ export class LoginService {
   loginUser(loginData: Login): Observable<any> {
     return this.http.post<any>(this.api, loginData);
   }
+
+  logoutUser() {
+    localStorage.removeItem('accessToken');
+    window.location.reload();
+  }
 }

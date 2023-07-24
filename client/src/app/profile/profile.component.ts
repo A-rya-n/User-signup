@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../shared/services/profile.service';
+import { LoginService } from '../shared/services/login.service';
 
 @Component({
   selector: 'app-profile',
@@ -9,7 +10,10 @@ import { ProfileService } from '../shared/services/profile.service';
 export class ProfileComponent implements OnInit {
   userProfile: any;
 
-  constructor(private profileService: ProfileService) {}
+  constructor(
+    private profileService: ProfileService,
+    private loginService: LoginService
+  ) {}
 
   ngOnInit(): void {
     const token = localStorage.getItem('accessToken');
@@ -22,5 +26,9 @@ export class ProfileComponent implements OnInit {
       (error: any) => {
         console.log('Error fetching data: ', error);
       };
+  }
+
+  logout() {
+    this.loginService.logoutUser();
   }
 }

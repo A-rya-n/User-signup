@@ -37,7 +37,6 @@ const loginUser = async (req, res) => {
       {
         user: {
           name: user.name,
-          email: user.email,
           id: user.id,
         },
       },
@@ -52,7 +51,7 @@ const loginUser = async (req, res) => {
 };
 
 const currentUser = async (req, res) => {
-  res.json(req.user);
+  res.json(await User.findById(req.user.id));
 };
 
 module.exports = { registerUser, loginUser, currentUser };

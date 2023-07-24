@@ -40,7 +40,6 @@ export class LoginComponent implements OnInit {
       const userData: Login = this.loginForm.value;
       this.loginService.loginUser(userData).subscribe(
         (response) => {
-          console.log('Backend response: ', response);
           this.onSucess(response.token);
           this.snack.open('Login successful', undefined, {
             duration: 2000,

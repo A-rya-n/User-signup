@@ -45,11 +45,14 @@ const loginUser = async (req, res) => {
       { expiresIn: "2m" }
     );
 
-    res.status(200).json({ accessToken });
-  }
-  else {
-    res.status(400).json({message:"Invalid email or password."})
+    res.status(200).json({ token: accessToken });
+  } else {
+    res.status(400).json({ message: "Invalid email or password." });
   }
 };
 
-module.exports = { registerUser, loginUser };
+const currentUser = async (req, res) => {
+  res.json(req.user);
+};
+
+module.exports = { registerUser, loginUser, currentUser };

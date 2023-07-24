@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { LoginService } from '../shared/login.service';
-import { Login } from '../shared/login.model';
+import { LoginService } from '../shared/services/login.service';
+import { Login } from '../shared/models/login.model';
 
 @Component({
   selector: 'app-login',
@@ -30,6 +30,10 @@ export class LoginComponent implements OnInit {
   onCancel() {
     this.router.navigate(['../'], { relativeTo: this.route });
   }
+  onSucess(token: string) {
+    localStorage.setItem('accessToken', token);
+    this.router.navigate(['/profile']);
+  }
 
   onSubmit() {
     if (this.loginForm.valid) {
@@ -37,7 +41,7 @@ export class LoginComponent implements OnInit {
       this.loginService.loginUser(userData).subscribe(
         (response) => {
           console.log('Backend response: ', response);
-          this.onCancel();
+          this.onSucess(response.token);
           this.snack.open('Login successful', undefined, {
             duration: 2000,
           });

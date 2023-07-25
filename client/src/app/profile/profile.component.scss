@@ -1,11 +1,43 @@
-// .dashbox {
-//   display: flex;
-//   height: 100%;
+.welcome {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 50px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  color: #000000;
+  font-weight: normal;
+  text-decoration: none;
+  margin-left: 10px;
+}
 
-//   .one {
-//     background: lightblue;
-//   }
-//   .two {
-//     background: darkcyan;
-//   }
-// }
+.logout {
+  margin-left: auto;
+  margin-right: 5px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 30px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+.card {
+  width: fit-content;
+  margin-top: 20px;
+
+  .user-name,
+  .user-email,
+  .user-role {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 30px;
+    text-decoration: none;
+    margin-left: 5px;
+    margin-top: 6px;
+    padding: 10px;
+  }
+  .user-role {
+    color: white;
+    background: black;
+    display: flex;
+    justify-content: center;
+  }
+}

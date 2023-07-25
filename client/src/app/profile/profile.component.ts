@@ -19,7 +19,6 @@ export class ProfileComponent implements OnInit {
     const token = localStorage.getItem('accessToken');
     if (token) {
       this.profileService.getProfile(token).subscribe((profileData) => {
-        console.log(profileData);
         this.userProfile = profileData;
       });
     } else

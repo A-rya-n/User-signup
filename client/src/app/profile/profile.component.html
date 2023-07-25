@@ -1,11 +1,22 @@
-<div>
-  <button (click)="logout()">Logout</button>
-</div>
-<!-- <div class="dashbox">
-  <mat-grid-list cols="5" rowHeight="530px">
-    <mat-grid-tile class="one">1</mat-grid-tile>
-  </mat-grid-list>
-  <mat-grid-list cols="5" rowHeight="530px" class="two">
-    <mat-grid-tile>2</mat-grid-tile>
-  </mat-grid-list>
-</div> -->
+<mat-grid-list class="main" cols="1" rowHeight="100px">
+  <mat-grid-tile class="one">
+    <h1 class="welcome">Welcome</h1>
+    <button class="logout" type="button" (click)="logout()">Logout</button>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list class="card-container" cols="1" rowHeight="400">
+  <mat-grid-tile>
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title>Profile</mat-card-title>
+        <mat-card-subtitle>Information card</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="user-name">{{ userProfile?.name }}</div>
+        <div class="user-email">{{ userProfile?.email }}</div>
+        <div class="user-role">{{ userProfile?.user }}</div>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
